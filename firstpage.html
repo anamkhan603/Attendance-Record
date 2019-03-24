@@ -1,0 +1,59 @@
+<html>
+<head>
+	 
+<title>first page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function check()
+		{
+		var username = document.getElementById('username').value;
+		var password = document.getElementById('pass').value;
+		atpos = username.indexOf("@");
+		dotpos = username.lastIndexOf(".");
+		if (username == "" || password == "") {
+			alert('All the details should be filled');
+			return false;
+			}
+			if(atpos < 1 || ( dotpos - atpos < 2 )) 
+         	{
+            alert("Please enter correct email ID")
+            //document.myform.username.focus() ;
+            return false;
+         	}
+     		  
+           
+		if(password.length<6)
+		{  
+ 			 alert("Password must be at least 6 characters long!");  
+			  return false;  
+ 		}  
+		
+	}
+	</script>
+</head>
+<body>
+	<div id="header">
+			<div id="img3"><img src="Capture.jpg" style="width: 70px; height: 70px"></div>
+			<div id="clgname">
+				<h1>M.H. Saboo Siddik COE</h1>
+				<h2>8,Saboo Siddik Polytechnic Road,Byculla,<br>Mumbai-400008</h2>
+			</div>
+	</div>
+	<div id="page">
+	<div id="left">
+		<div id="img1"><img src="att1.jpg"></div>
+	</div>
+	<div class="form">
+		<div id="login">
+			<h3>TE Computers<br>Attendance record</h3>
+			<div id="img2"><img src="download.png" style="width: 100px;height: 100px"></div>
+		</div>
+		<form class="register-form" action="stud_info.html" onsubmit="return check()">
+		Email:<input type="text" placeholder="Email" id="username"/>
+		Password:<input type="password" placeholder="Password" id="pass"/>
+		<button>Login</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>
